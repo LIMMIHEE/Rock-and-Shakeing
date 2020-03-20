@@ -28,7 +28,18 @@ public class Accelometer {
         sensorEventListener= new SensorEventListener() {
             @Override
             public void onSensorChanged(SensorEvent event) {
-                if(listener != null){
+                if( listener != null){
+
+                //if(event.sensor.getType() == Sensor.TYPE_ACCELEROMETER){
+//                    float ax =event.values[0];
+//                    float ay =event.values[1];
+//                    float az =event.values[2];
+//                    float gravityX = ax / SensorManager.GRAVITY_EARTH;
+//                    float gravityY = ay / SensorManager.GRAVITY_EARTH;
+//                    float gravityZ = az / SensorManager.GRAVITY_EARTH;
+//
+//                    float f = gravityX* gravityX + gravityY*gravityY+gravityZ*gravityZ;
+//                    double squaredD = Math.sqrt(f.doubleValue());
                     listener.onTransration(event.values[0], event.values[1],event.values[2]);
                 }
             }
