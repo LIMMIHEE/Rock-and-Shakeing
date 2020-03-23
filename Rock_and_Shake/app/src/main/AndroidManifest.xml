@@ -9,6 +9,7 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
+        <activity android:name=".Music_shake_play"></activity>
         <activity android:name=".rand_sound" />
         <activity android:name=".MainActivity">
             <intent-filter>
