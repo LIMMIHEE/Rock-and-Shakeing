@@ -24,6 +24,7 @@ public class Music_shake_play extends AppCompatActivity {
     private Accelometer accelometer;
     private Gyroscop gyroscop;
 
+    float now_shake=3.0f;
 
     MediaPlayer mediaPlayer;
 
@@ -53,10 +54,11 @@ public class Music_shake_play extends AppCompatActivity {
         gyroscop.setListener(new Gyroscop.Listener() {
             @Override
             public void onRotation(float rx, float ry, float rz) {
-                if (rz > 3.0f ) {
+                if (rz != now_shake  ) {
+                    now_shake=rz;
                     mediaPlayer.start();
                     getWindow().getDecorView().setBackgroundColor(Color.GREEN);
-                } else if((rz < -3.0f )){
+                } else{
                     mediaPlayer.pause();
                     getWindow().getDecorView().setBackgroundColor(Color.YELLOW);
                 }

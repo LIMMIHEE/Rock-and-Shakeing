@@ -1,0 +1,48 @@
+{
+  "project_info": {
+    "project_number": "97852265528",
+    "firebase_url": "https://rock-and-shake.firebaseio.com",
+    "project_id": "rock-and-shake",
+    "storage_bucket": "rock-and-shake.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:97852265528:android:48eb97e8418b76961702cd",
+        "android_client_info": {
+          "package_name": "com.limmihee.rock_and_shake"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "97852265528-4jd2qdeq4shsmb224di6kcv5j23u12vn.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.limmihee.rock_and_shake",
+            "certificate_hash": "a67a206707fa290eb6ab0e3d6e7318783d38f050"
+          }
+        },
+        {
+          "client_id": "97852265528-funbqq52cvn65ukvhcb7qtdjm50ra932.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyCHeLvOZBRTaS6FHEfjVrX-2EElUcTIcF4"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "97852265528-funbqq52cvn65ukvhcb7qtdjm50ra932.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
