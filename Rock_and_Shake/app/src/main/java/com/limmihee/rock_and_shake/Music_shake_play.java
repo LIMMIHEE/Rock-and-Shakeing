@@ -12,6 +12,7 @@ import android.media.MediaPlayer;
 import android.nfc.Tag;
 import android.os.Bundle;
 import android.util.Log;
+import android.widget.ImageView;
 
 public class Music_shake_play extends AppCompatActivity {
     SensorManager sensorManager ;
@@ -21,10 +22,14 @@ public class Music_shake_play extends AppCompatActivity {
     private static  final  float SHAKE_GRAVITY = 2.5f;
     private static  final  float SHAKE_STOP_TIME = 500;
 
+    private ImageView sing;
+
     private Accelometer accelometer;
     private Gyroscop gyroscop;
 
-    float now_shake=3.0f;
+    float now_shake_z=3.0f;
+    float now_shake_x=3.0f;
+    float now_shake_y=3.0f;
 
     MediaPlayer mediaPlayer;
 
@@ -37,7 +42,7 @@ public class Music_shake_play extends AppCompatActivity {
 
         sensorManager = (SensorManager) getSystemService(SENSOR_SERVICE);
         sensor = sensorManager.getDefaultSensor(Sensor.TYPE_ACCELEROMETER);
-
+        sing= (ImageView)findViewById (R.id.Sing_img_);
 
         accelometer = new Accelometer(this);
         gyroscop= new Gyroscop(this);
@@ -54,13 +59,16 @@ public class Music_shake_play extends AppCompatActivity {
         gyroscop.setListener(new Gyroscop.Listener() {
             @Override
             public void onRotation(float rx, float ry, float rz) {
-                if (rz != now_shake  ) {
-                    now_shake=rz;
+                if (rz != now_shake_z && now_shake_x!=rx && now_shake_y!=ry ) {
+                    now_shake_z=rz;   now_shake_x=rx;   now_shake_y=ry;
                     mediaPlayer.start();
-                    getWindow().getDecorView().setBackgroundColor(Color.GREEN);
+                    //getWindow().getDecorView().setBackgroundColor(Color.GREEN);
+                    sing.setImageResource(R.drawable.rock_sing);
+
                 } else{
                     mediaPlayer.pause();
-                    getWindow().getDecorView().setBackgroundColor(Color.YELLOW);
+                    //getWindow().getDecorView().setBackgroundColor(Color.YELLOW);
+                    sing.setImageResource(R.drawable.rock_non_sing);
                 }
             }
         });
